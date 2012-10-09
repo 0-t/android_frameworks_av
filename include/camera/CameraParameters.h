@@ -849,17 +849,22 @@ public:
     static const char AUTO_EXPOSURE_FRAME_AVG[];
     static const char AUTO_EXPOSURE_CENTER_WEIGHTED[];
     static const char AUTO_EXPOSURE_SPOT_METERING[];
-
+#if defined(QCOM_HARDWARE) && !defined(SAMSUNG_CAMERA_QCOM)
     static const char KEY_SHARPNESS[];
+#endif
     static const char KEY_MAX_SHARPNESS[];
+
     static const char KEY_MIN_SHARPNESS[];
     static const char KEY_CONTRAST[];
     static const char KEY_MAX_CONTRAST[];
+#if defined(QCOM_HARDWARE) && !defined(SAMSUNG_CAMERA_QCOM)
     static const char KEY_MIN_CONTRAST[];
+#endif
     static const char KEY_SATURATION[];
     static const char KEY_MAX_SATURATION[];
+#if defined(QCOM_HARDWARE) && !defined(SAMSUNG_CAMERA_QCOM)
     static const char KEY_MIN_SATURATION[];
-
+#endif
     static const char KEY_HISTOGRAM[] ;
     static const char KEY_SUPPORTED_HISTOGRAM_MODES[] ;
     // Values for HISTOGRAM
@@ -927,6 +932,28 @@ public:
     void setPreviewFpsRange(int minFPS,int maxFPS);
     void setPostviewSize(int x, int y);
     void getSupportedHfrSizes(Vector<Size> &sizes) const;
+#endif
+
+#ifdef SAMSUNG_CAMERA_QCOM
+    static const char FOCUS_MODE_FACEDETECT[];
+    static const char FOCUS_MODE_TOUCHAF[];
+    static const char ISO_50[];
+    static const char KEY_ANTI_SHAKE_MODE[];
+    static const char KEY_AUTO_CONTRAST[];
+    static const char KEY_BEAUTY_MODE[];
+    static const char KEY_BLUR_MODE[];
+    static const char KEY_VINTAGE_MODE[];
+    static const char KEY_WDR_MODE[];
+    static const char VINTAGE_MODE_BNW[];
+    static const char VINTAGE_MODE_COOL[];
+    static const char VINTAGE_MODE_NORMAL[];
+    static const char VINTAGE_MODE_OFF[];
+    static const char VINTAGE_MODE_WARM[];
+    static const char SCENE_MODE_DAWN[];
+    static const char SCENE_MODE_DUSKDAWN[];
+    static const char SCENE_MODE_FALL[];
+    static const char SCENE_MODE_FALL_COLOR[];
+    static const char SCENE_MODE_TEXT[];
 #endif
 
 private:
