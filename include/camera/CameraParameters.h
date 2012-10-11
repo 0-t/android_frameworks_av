@@ -172,6 +172,7 @@ public:
     // Supported number of preview frames per second.
     // Example value: "24,15,10". Read.
     static const char KEY_SUPPORTED_PREVIEW_FRAME_RATES[];
+
 #ifdef QCOM_HARDWARE
     // The mode of preview frame rate.
     // Example value: "frame-rate-auto, frame-rate-fixed".
@@ -849,9 +850,12 @@ public:
     static const char AUTO_EXPOSURE_FRAME_AVG[];
     static const char AUTO_EXPOSURE_CENTER_WEIGHTED[];
     static const char AUTO_EXPOSURE_SPOT_METERING[];
-#if defined(QCOM_HARDWARE) && !defined(SAMSUNG_CAMERA_QCOM)
+//#if defined(QCOM_HARDWARE) && !defined(SAMSUNG_CAMERA_QCOM)
+//////////////////////
+//////////////////////
+//////////////////////const char CameraParameters::KEY_SHARPNESS[] = "sharpness";
     static const char KEY_SHARPNESS[];
-#endif
+//#endif
     static const char KEY_MAX_SHARPNESS[];
 
     static const char KEY_MIN_SHARPNESS[];
