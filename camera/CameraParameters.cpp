@@ -324,18 +324,21 @@ const char CameraParameters::KEY_MAX_SHARPNESS[] = "sharpness-max";
 const char CameraParameters::KEY_MIN_SHARPNESS[] = "sharpness-min";
 #else
 const char CameraParameters::KEY_MAX_SHARPNESS[] = "max-sharpness";
+#endif
 const char CameraParameters::KEY_CONTRAST[] = "contrast";
 #if defined(QCOM_HARDWARE) && !defined(SAMSUNG_CAMERA_QCOM)
 const char CameraParameters::KEY_MAX_CONTRAST[] = "contrast-max";
 const char CameraParameters::KEY_MIN_CONTRAST[] = "contrast-min";
 #else
 const char CameraParameters::KEY_MAX_CONTRAST[] = "max-contrast";
+#endif
 const char CameraParameters::KEY_SATURATION[] = "saturation";
 #if defined(QCOM_HARDWARE) && !defined(SAMSUNG_CAMERA_QCOM)
 const char CameraParameters::KEY_MAX_SATURATION[] = "saturation-max";
 const char CameraParameters::KEY_MIN_SATURATION[] = "saturation-min";
 #else
 const char CameraParameters::KEY_MAX_SATURATION[] = "max-saturation";
+#endif
 
 //Values for DENOISE
 const char CameraParameters::DENOISE_OFF[] = "denoise-off";
@@ -376,6 +379,8 @@ const char CameraParameters::AE_BRACKET_HDR_OFF[] = "Off";
 const char CameraParameters::AE_BRACKET_HDR[] = "HDR";
 const char CameraParameters::AE_BRACKET[] = "AE-Bracket";
 
+const char CameraParameters::LOW_POWER[] = "Low_Power";
+const char CameraParameters::NORMAL_POWER[] = "Normal_Power";
 #ifdef SAMSUNG_CAMERA_QCOM
 const char CameraParameters::FOCUS_MODE_FACEDETECT[] = "facedetect";
 const char CameraParameters::FOCUS_MODE_TOUCHAF[] = "touchaf";
