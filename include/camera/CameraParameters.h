@@ -910,7 +910,7 @@ public:
     static const char HDR_ENABLE[];
     static const char HDR_DISABLE[];
 
-#ifdef SAMSUNG_CAMERA_QCOM
+#if defined(QCOM_HARDWARE) && defined(SAMSUNG_CAMERA_LEGACY)
     static const char FOCUS_MODE_FACEDETECT[];
     static const char FOCUS_MODE_TOUCHAF[];
     static const char ISO_50[];
