@@ -848,10 +848,13 @@ public:
 
     static const char KEY_SHARPNESS[];
     static const char KEY_MAX_SHARPNESS[];
+    static const char KEY_MIN_SHARPNESS[];
     static const char KEY_CONTRAST[];
     static const char KEY_MAX_CONTRAST[];
+    static const char KEY_MIN_CONTRAST[];
     static const char KEY_SATURATION[];
     static const char KEY_MAX_SATURATION[];
+    static const char KEY_MIN_SATURATION[];
 
     static const char KEY_HISTOGRAM[] ;
     static const char KEY_SUPPORTED_HISTOGRAM_MODES[] ;
