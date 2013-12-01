@@ -256,12 +256,9 @@ void CameraClient::disconnect() {
 
     // Release the held ANativeWindow resources.
     if (mPreviewWindow != 0) {
-#ifdef QCOM_HARDWARE
-        mHardware->setPreviewWindow(0);
-#endif
         disconnectWindow(mPreviewWindow);
         mPreviewWindow = 0;
-#if !defined(NO_UPDATE_PREVIEW) || if !defined(QCOM_HARDWARE)
+#ifndef NO_UPDATE_PREVIEW
         mHardware->setPreviewWindow(mPreviewWindow);
 #endif
     }
@@ -302,10 +299,6 @@ status_t CameraClient::setPreviewWindow(const sp<IBinder>& binder,
             native_window_set_buffers_transform(window.get(), mOrientation);
             result = mHardware->setPreviewWindow(window);
         }
-#ifdef QCOM_HARDWARE
-    } else {
-        result = mHardware->setPreviewWindow(window);
-#endif
     }
 
     if (result == NO_ERROR) {
@@ -369,9 +362,6 @@ status_t CameraClient::startPreview() {
     enableMsgType(CAMERA_MSG_PREVIEW_METADATA);
 #endif
     LOG1("startPreview (pid %d)", getCallingPid());
-#ifdef QCOM_HARDWARE
-    enableMsgType(CAMERA_MSG_PREVIEW_METADATA);
-#endif
     return startCameraMode(CAMERA_PREVIEW_MODE);
 }
 
@@ -603,7 +593,6 @@ status_t CameraClient::takePicture(int msgType) {
 #if defined(OMAP_ICS_CAMERA) || defined(OMAP_ENHANCEMENT_BURST_CAPTURE)
     picMsgType |= CAMERA_MSG_COMPRESSED_BURST_IMAGE;
 #endif
-
 #ifdef QCOM_HARDWARE
     disableMsgType(CAMERA_MSG_PREVIEW_METADATA);
 #endif
