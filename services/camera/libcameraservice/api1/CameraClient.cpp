@@ -261,7 +261,7 @@ void CameraClient::disconnect() {
 #endif
         disconnectWindow(mPreviewWindow);
         mPreviewWindow = 0;
-#if !defined(NO_UPDATE_PREVIEW) || !defined(QCOM_HARDWARE)
+#if !defined(NO_UPDATE_PREVIEW) || if !defined(QCOM_HARDWARE)
         mHardware->setPreviewWindow(mPreviewWindow);
 #endif
     }
